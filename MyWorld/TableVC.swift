@@ -14,10 +14,10 @@ class TableVC: UITableViewController {
     let places = PlaceManager.shared
     var refresh = false
     var whatButton = ""
-    //var filteredCells = [Place]()
     
     
     //MARK: -----------------------------------Refresh
+    
     //*
     override func viewWillAppear(_ animated: Bool) {
         
@@ -31,22 +31,7 @@ class TableVC: UITableViewController {
         if refresh == true {
             
             self.tableView.reloadData()
-            //places.sortPlaces (whattButton: whatButton)
-            
-            //self.places.saveJsonToFile(origin: self.places.places)
-            //self.tableView.reloadData()
         }
-        
-        
-        
-        //places.sortPlaces (whattButton: whatButton)
-        //self.tableView.reloadData()
-        
-        //dump (places.places)
-        //print ("WhatButton --> \(whatButton)")
-        //self.places.saveJsonToFile(origin: self.places.places)
-        
-        
     }
     
     
@@ -60,13 +45,8 @@ class TableVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "placeCell", for: indexPath) as! PlaceCell
-//        let place = places.itemAt(position: indexPath.item)
-//        
-//        cell.nameLabel.text = place?.name
-//        cell.iconTable.image = UIImage(named: (place?.iconTable)!)
         
         if (places.filteredByIcon(position: indexPath.item, whattButton: whatButton)) {
-
 
             let place = places.itemAt(position: indexPath.item)
 
@@ -81,18 +61,7 @@ class TableVC: UITableViewController {
         refresh = true
         
         return cell
-        
     }
- 
-    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-    }
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        if !(places.filteredByIcon(position: indexPath.item, whattButton: whatButton)) {
-//            return 0
-//        }
-//        else { return UITableView.automaticDimension }
-//    }
     
     
     // MARK: --------------------------------- Navigation

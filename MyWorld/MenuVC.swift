@@ -32,7 +32,7 @@ class MenuVC: UIViewController {
     
     
     var whatButton = ""
-    
+
     
     @IBAction func oneXOne(_ sender: Any) {
         whatButton = "Culture"
@@ -67,6 +67,7 @@ class MenuVC: UIViewController {
     
     override func viewDidLoad() {
         
+        
         super.viewDidLoad()
 
         //Adding format
@@ -99,6 +100,8 @@ class MenuVC: UIViewController {
         viewThreeXThree.layer.borderColor = UIColor.white.cgColor
         viewThreeXThree.layer.borderWidth = 0.3
         threeXThree.layer.cornerRadius = 8
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

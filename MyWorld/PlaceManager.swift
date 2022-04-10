@@ -30,8 +30,9 @@ class PlaceManager {
     
     
     func itemAt(position: Int) -> Place? {
-        // guard let us specify some condition that needs to be fulfilled.
+        
         guard position < places.count else { return nil }
+        
         return places[position]
     }
     
@@ -39,6 +40,7 @@ class PlaceManager {
     func itemWithId(_ id: String) -> Place? {
         return places.filter {$0.id == id}.first
     }
+    
     
     func remove(_ place: Place) {
         places = places.filter {$0.id != place.id}
@@ -50,72 +52,31 @@ class PlaceManager {
     }
 
     
+    //*
     func sortPlaces (whattButton: String) {
             
-            for plac in places {
-            
-                
-                
-                if plac.iconTable == whattButton {
+        for plac in places {
+             
+            if plac.iconTable == whattButton {
    
-                    remove(plac)
-                    
-                    for plac in places {
-                        
-                        print ("Nom --> \(plac.name) // iconTable --> \(plac.iconTable)")
-                    }
-                    
-                    print ("----------------")
-                    
-                    places.insert(plac, at: 0)
-                    
-                    for plac in places {
-                        
-                        print ("Nom --> \(plac.name) // iconTable --> \(plac.iconTable)")
-                    }
-                    
-                    print ("*****************")
-                }
+                remove(plac)
+                places.insert(plac, at: 0)
             }
-        
-//        if (whattButton == "Fast Food"){
-//
-//            places = places.sorted { (first, second) in
-//
-//                return first.iconTable > second.iconTable
-//            }
-//        }
-//        else if (whattButton == "Restaurant"){
-//
-//            //places = places.filter {$0.iconTable == whattButton}
-//            places = places.sorted { (first, second) in
-//
-//                return first.iconTable < second.iconTable
-//            }
-//        }
+        }
     }
     
     
+    //*
     func filteredByIcon(position: Int, whattButton: String) -> Bool {
 
         if places[position].iconTable == whattButton {
 
             return true
         }
-        //places.filter {$0.iconTable == whattButton}
+       
         return false
     }
-    
-    
-//    func itemAtFirstPosition(position: Int, whattButton: String) -> Place? {
-//
-//        if (places[position].iconTable == whattButton){
-//
-//            return places[position]
-//        }
-//
-//        else { return nil }
-//    }
+
     
     //MARK: ---------------------------------------  Access to files and codification
     func jsonFrom(places: [Place]) -> Data?{
@@ -176,7 +137,7 @@ class PlaceManager {
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 41.41, longitude: 2.13),
               imageName: "UOC 22@",
-              iconTable: "Miscellanea"),
+              iconTable: "Culture"),
         Place(name: "Rostisseria Lolita",
               descriptionPlace: "Els millors pollastres de Sant Cugat,de la comarca i dels multiversos coneguts...",
               webAddress: "https://es-es.facebook.com/rostisserialolita/",
@@ -190,20 +151,20 @@ class PlaceManager {
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 41.35, longitude: 2.11),
               imageName: "cifo",
-              iconTable: "Fast Food"),
+              iconTable: "Culture"),
         Place(name: "Out of china",
               descriptionPlace: "La cuina xinesa està íntimament relacionada, no només amb la societat, sinó també amb la filosofia i la medicina xinesa. Distingeix entre l' cai (verdures cuinades i per extensió tot el que acompanya els cereals) i els cereals en si, el fan . Els aliments Yin (femenins) són aliments tendres i rics en aigua com les fruites i les verdures, i tenen un efecte resfrescant. Els aliments yang (masculins) inclouen els plats fregits, especiats i a base de carns, i serveixen per reescalfar. Si tot menjar ha d'harmonitzar els sabors, els menjars xinesos també han de buscar un equilibri entre el fred i el calent, els colors i la consistència dels diversos aliments. Per això les tècniques culinàries xineses són nombroses i particularment variades. La successió de plats tal com es coneix als països occidentals és substituïda per la recerca de l'equilibri entre els cinc sabors bàsics (dolç, salat, àcid, amarg i picant). Per això, els plats amb gust exclusivament dolç només s'ofereixen al final dels festins donats amb motiu de grans celebracions. La vista també juga un paper important en la presentació dels plats. Alguns plats se serveixen amb fins essencialment terapèutics, com els nius d'orenetes o les aletes de taurons, que són ingredients insípids. El concepte de la complementarietat entre el fred i el calent, heretat de la medicina xinesa, es pren particularment en compte a la Cuina del sud de la Xina.",
               webAddress: "http://www.outofchinabarcelona.com/",
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 41.39, longitude: 2.15),
               imageName: "outOfChina",
-              iconTable: "Restaurant"),
+              iconTable: "Asian Restaurant"),
         Place(name: "CosmoCaixa",
               descriptionPlace: "CosmoCaixa Barcelona es un museo de ciencias perteneciente a la Obra Social de situado en Barcelona. Fue inaugurado en el año 2004 tras la remodelación de su predecesor, el Museo de Ciencias de Barcelona, inaugurado en 1981. La Caixa era propietaria de otro museo homólogo en Alcobendas (Madrid), llamado CosmoCaixa Madrid. Este museo cerró sus puertas el 31 de diciembre de 2013. En 2006, el Foro Europeo de Museos le otorgó el Premio del museo europeo del año, galardón que reconoce cada año a los nuevos museos que han realizado avances e innovaciones en el ámbito museístico. El museo galardonado alberga durante un año la estatua de Henry Moore The Egg, que simboliza el premio. Junto con el Museo Guggenheim de Bilbao (2000), el Museo Arqueológico Provincial de Alicante (2004) y el Museo de Medina Azahara (2012), son los cuatro únicos museos de España que han recibido el premio.",
               webAddress: "https://cosmocaixa.es/es/cosmocaixa-barcelona",
               image_in: nil,
               position: CLLocationCoordinate2D(latitude: 41.39, longitude: 2.15),
               imageName: "CosmoCaixa",
-              iconTable: "Restaurant"),
+              iconTable: "Museum"),
     ]
 }
