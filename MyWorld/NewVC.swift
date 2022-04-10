@@ -28,7 +28,8 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         self.nameNew?.text = "Write here the new name"
         self.imageNew?.image = UIImage(named: "modernBuilding")
         self.descriptionNew?.text = "Write here the description"
@@ -131,22 +132,43 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     }
     
     //Back
+
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
        
         if self.isMovingFromParent {
-            //Save into manager
-            countNum = manager.count()
-            manager.append(place)
-            manager.places[countNum].name = nameNew.text
-            manager.places[countNum].descriptionPlace = descriptionNew.text
-            manager.places[countNum].webAddress = webAddressNew.text
-            manager.places[countNum].imageName = "modernBuilding"
-            manager.places[countNum].iconTable = place.iconTable
-            manager.places[countNum].position = actualPosition
-            //Save into file
-            manager.saveJsonToFile(origin: manager.places)
+            //* Draft to control blank text label.
+            //if self.nameNew.text != "Write here the new name"{
+        
+                //Save into manager
+                countNum = manager.count()
+                manager.append(place)
+                manager.places[countNum].name = nameNew.text
+                manager.places[countNum].descriptionPlace = descriptionNew.text
+                manager.places[countNum].webAddress = webAddressNew.text
+                manager.places[countNum].imageName = "modernBuilding"
+                manager.places[countNum].iconTable = place.iconTable
+                manager.places[countNum].position = actualPosition
+                //Save into file
+                manager.saveJsonToFile(origin: manager.places)
+//            }
+//            else {
+            
+//                let alert = UIAlertController(title: "", message: "És necessari un titol per a crear una nova localització?", preferredStyle: UIAlertController.Style.alert)
+//                self.present(alert, animated: true, completion: nil)
+//
+//                let accept = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel) { (action) in
+//                    print("Blue action button tapped")
+//                }
+//
+//                alert.addAction(accept)
+//
+//                DispatchQueue.main.async{
+//                     self.present(alert, animated: true, completion: nil)
+//                }
+//            }
         }
     }
-
 }
+
