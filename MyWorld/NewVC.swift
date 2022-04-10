@@ -138,7 +138,7 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
         super.viewWillDisappear(animated)
        
         if self.isMovingFromParent {
-            //* Draft to control blank text label.
+            //* Draft to control new page without data + label.placeholder.
             //if self.nameNew.text != "Write here the new name"{
         
                 //Save into manager
