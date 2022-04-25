@@ -19,6 +19,7 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     var actualPosition = CLLocationCoordinate2D(latitude: 41.41, longitude: 2.13)
     
     
+    
     let defaultNewNameText = "Write here the new name"
     let defaultDescriptionNewText = "Write here the description"
     let defaultWebAdressNewText = "Write here the web address"

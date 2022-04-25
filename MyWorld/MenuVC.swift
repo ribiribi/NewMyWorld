@@ -63,13 +63,15 @@ class MenuVC: UIViewController {
         whatButton = "Restaurant"
         performSegue(withIdentifier: "toTable", sender: sender)
     }
-    
+
     
     override func viewDidLoad() {
         
         
+        
         super.viewDidLoad()
 
+        
         //Adding format
         viewOneXOne.layer.cornerRadius = 8
         viewOneXOne.layer.borderColor = UIColor.white.cgColor
@@ -100,6 +102,7 @@ class MenuVC: UIViewController {
         viewThreeXThree.layer.borderColor = UIColor.white.cgColor
         viewThreeXThree.layer.borderWidth = 0.3
         threeXThree.layer.cornerRadius = 8
+        
         
         
     }

@@ -21,11 +21,13 @@ class InitialVC: UIViewController {
     
     override func viewDidLoad() {
         
+      
+        
         super.viewDidLoad()
 
         self.welcomeLAbel.font = UIFont (name: "Chalkduster", size: 30)
         self.myWorldLabel.font = UIFont (name: "Chalkduster", size: 72)
-         self.worldLabel.font = UIFont (name: "Chalkduster", size: 78)
+        self.worldLabel.font = UIFont (name: "Chalkduster", size: 78)
         
         
             
@@ -46,8 +48,8 @@ class InitialVC: UIViewController {
                 }, completion: nil)
                 
                 Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { timer in
-                    self.performSegue(withIdentifier: "toTabBarController", sender: nil)
             
+                    self.performSegue(withIdentifier: "toTabBarController", sender: nil)
                 }
             }
         }        

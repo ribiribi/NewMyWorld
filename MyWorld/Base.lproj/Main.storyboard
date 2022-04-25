@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="D8Q-W7-qH8">
             <objects>
-                <tabBarController id="geS-hn-9QQ" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="geS-hn-9QQ" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="nqf-DJ-WXo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -288,7 +288,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="MOs-w6-CRX"/>
+                        <viewLayoutGuide key="safeArea" id="SAL-oB-3WA"/>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.18823529411764706" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="lD7-jo-nNM" firstAttribute="centerX" secondItem="Wxp-Xn-9A3" secondAttribute="centerX" id="6QR-wZ-l0d"/>
@@ -926,7 +926,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MSl-AU-9jg">
-                                <rect key="frame" x="10" y="10" width="300" height="578"/>
+                                <rect key="frame" x="10" y="-10" width="300" height="581"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qj3-oL-63r">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
@@ -1027,10 +1027,10 @@
                                         </connections>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="ZUi-NR-cEe">
-                                        <rect key="frame" x="0.0" y="220" width="300" height="132"/>
+                                        <rect key="frame" x="0.0" y="220" width="300" height="135"/>
                                         <color key="backgroundColor" red="0.13725490196078433" green="0.18823529411764706" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="132" id="a7z-lb-he0"/>
+                                            <constraint firstAttribute="height" constant="135" id="a7z-lb-he0"/>
                                         </constraints>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo </string>
                                         <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1041,22 +1041,24 @@
                                         </connections>
                                     </textView>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-Ww-BAr">
-                                        <rect key="frame" x="0.0" y="362" width="300" height="216"/>
+                                        <rect key="frame" x="0.0" y="365" width="300" height="216"/>
                                         <connections>
                                             <outlet property="dataSource" destination="7HY-9s-xml" id="tNC-Sb-vIF"/>
                                             <outlet property="delegate" destination="7HY-9s-xml" id="K4C-q8-KfZ"/>
                                         </connections>
                                     </pickerView>
                                 </subviews>
+                                <color key="backgroundColor" red="0.30588235289999999" green="0.41960784309999999" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="CtX-O0-Xk4"/>
-                        <color key="backgroundColor" red="0.13725490196078433" green="0.18823529411764706" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="oHZ-PW-8lx"/>
+                        <color key="backgroundColor" red="0.30588235289999999" green="0.41960784309999999" blue="0.49803921569999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="CtX-O0-Xk4" firstAttribute="trailing" secondItem="MSl-AU-9jg" secondAttribute="trailing" constant="10" id="0JN-Ph-gdQ"/>
-                            <constraint firstItem="MSl-AU-9jg" firstAttribute="top" secondItem="CtX-O0-Xk4" secondAttribute="top" constant="10" id="NyZ-L2-dgZ"/>
-                            <constraint firstItem="CtX-O0-Xk4" firstAttribute="bottom" secondItem="MSl-AU-9jg" secondAttribute="bottom" constant="-5" id="XfB-yX-uUU"/>
-                            <constraint firstItem="MSl-AU-9jg" firstAttribute="leading" secondItem="CtX-O0-Xk4" secondAttribute="leading" constant="10" id="jZY-qb-ZJb"/>
+                            <constraint firstAttribute="trailing" secondItem="MSl-AU-9jg" secondAttribute="trailing" constant="10" id="0JN-Ph-gdQ"/>
+                            <constraint firstItem="oHZ-PW-8lx" firstAttribute="bottom" secondItem="MSl-AU-9jg" secondAttribute="bottom" constant="10" id="568-kf-7Gq"/>
+                            <constraint firstItem="MSl-AU-9jg" firstAttribute="top" secondItem="3xC-4n-as8" secondAttribute="top" constant="-10" id="NyZ-L2-dgZ"/>
+                            <constraint firstAttribute="bottom" secondItem="MSl-AU-9jg" secondAttribute="bottom" constant="10" id="XfB-yX-uUU"/>
+                            <constraint firstItem="MSl-AU-9jg" firstAttribute="leading" secondItem="3xC-4n-as8" secondAttribute="leading" constant="10" id="jZY-qb-ZJb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New" id="osr-1O-t57"/>
