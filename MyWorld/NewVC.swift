@@ -18,6 +18,15 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     let locationManager = CLLocationManager()
     var actualPosition = CLLocationCoordinate2D(latitude: 41.41, longitude: 2.13)
     
+    
+    let defaultNewNameText = "Write here the new name"
+    let defaultDescriptionNewText = "Write here the description"
+    let defaultWebAdressNewText = "Write here the web address"
+    
+    //textViews' placeholder #1
+    var activeTextView = UITextView()
+    
+    
     @IBOutlet weak var nameNew: UITextView!
     @IBOutlet weak var webAddressNew: UITextView!
     @IBOutlet weak var descriptionNew: UITextView!
@@ -29,15 +38,26 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //textViews' placeholder #2
+        nameNew.delegate = self
+        descriptionNew.delegate = self
+        webAddressNew.delegate = self
         
-        self.nameNew?.text = "Write here the new name"
+        //Adding format
+        self.nameNew.textColor = UIColor.white.withAlphaComponent(0.2)
+        self.descriptionNew.textColor = UIColor.white.withAlphaComponent(0.2)
+        self.webAddressNew.textColor = UIColor.white.withAlphaComponent(0.2)
+        
+        self.nameNew?.text = defaultNewNameText
         self.imageNew?.image = UIImage(named: "modernBuilding")
-        self.descriptionNew?.text = "Write here the description"
-        self.webAddressNew.text = "Write here the web address"
+        self.descriptionNew?.text = defaultDescriptionNewText
+        self.webAddressNew.text = defaultWebAdressNewText
         place.iconTable = "Default"
+        
         
         iconNew.image = UIImage(named: "Default")
         pikerViewNew.selectRow(0, inComponent: 0, animated: true)
+        
         
         descriptionNew.layer.borderColor = UIColor.white.cgColor
         descriptionNew.layer.borderWidth = 0.3
@@ -62,10 +82,11 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
         }
-}
+    }
     
     
     // MARK: --------------------------------------------------Functions
+    
     //PickerView functions
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -111,16 +132,47 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
     }
     
     internal func textViewDidBeginEditing(_ textView: UITextView) {
+   
+        //textViews' placeholder #3: delete new labels text once it's clicked for the first time.
+        activeTextView = textView
+        
+        deleteLabelText1stTime()
+
+        
         if textView != self.nameNew{
             self.animateViewMoving(up: true, moveValue: 100)
         }
     }
+    
+    //textViews' placeholder #4
+    func deleteLabelText1stTime () {
+        
+        if (activeTextView == nameNew) && (activeTextView.text == defaultNewNameText) {
+            
+            nameNew.text = ""
+            nameNew.textColor = UIColor.white.withAlphaComponent(1)
+        }
+        
+        if (activeTextView == descriptionNew) && (activeTextView.text == defaultDescriptionNewText) {
+            
+            descriptionNew.text = ""
+            descriptionNew.textColor = UIColor.white.withAlphaComponent(1)
+        }
+        
+        if (activeTextView == webAddressNew) && (activeTextView.text == defaultWebAdressNewText) {
+            
+            webAddressNew.text = ""
+            webAddressNew.textColor = UIColor.white.withAlphaComponent(1)
+        }
+    }
+    
     
     internal func textViewDidEndEditing(_ textView: UITextView) {
         if textView != self.nameNew{
             self.animateViewMoving(up: false, moveValue: 100)
         }
     }
+    
     
     //Location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
