@@ -13,7 +13,7 @@ import MapKit
 class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, CLLocationManagerDelegate {
 
     let manager = PlaceManager.shared
-    var place = Place(name: "", descriptionPlace: "", webAddress: "", position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2), imageName: "", iconTable: "Default")
+    var place = Place(name: "", descriptionPlace: "", webAddress: "", position: CLLocationCoordinate2D(latitude: 42.4, longitude: 2.2), imageName: "", iconTable: "Miscellanea")
     var countNum = 0
     let locationManager = CLLocationManager()
     var actualPosition = CLLocationCoordinate2D(latitude: 41.41, longitude: 2.13)
@@ -53,10 +53,10 @@ class NewVC: UIViewController, UITextViewDelegate, UIPickerViewDataSource, UIPic
         self.imageNew?.image = UIImage(named: "modernBuilding")
         self.descriptionNew?.text = defaultDescriptionNewText
         self.webAddressNew.text = defaultWebAdressNewText
-        place.iconTable = "Default"
+        place.iconTable = "Miscellanea"
         
         
-        iconNew.image = UIImage(named: "Default")
+        iconNew.image = UIImage(named: "Miscellanea")
         pikerViewNew.selectRow(0, inComponent: 0, animated: true)
         
         
